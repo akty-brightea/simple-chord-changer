@@ -28,5 +28,24 @@
         console.log("コードデータ読み込み成功！", chordData);
       });
   </script>
+
+  <!-- manifest の読み込み -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- PWA用テーマカラー（スマホのアドレスバー色など） -->
+  <meta name="theme-color" content="#4caf50">
+
+  <!-- iOS対応 -->
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- service worker 登録 -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(reg => console.log('Service Worker registered:', reg.scope))
+        .catch(err => console.log('Service Worker registration failed:', err));
+    }
+  </script>
 </body>
 </html>

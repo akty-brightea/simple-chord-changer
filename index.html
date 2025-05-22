@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>シンプルギターコードチェンジャー</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>シンプルギターコードチェンジャー</h1>
+    <label for="chords">コードを入力（例：C G Am F）:</label>
+    <input type="text" id="chords" placeholder="例：C G Am F">
+    <button onclick="convertChords()">変換する</button>
+    <div id="result">
+      <div id="diagrams" class="diagram-wrapper"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    let chordData = {};
+
+    fetch('chords.json')
+      .then(res => res.json())
+      .then(data => {
+        chordData = data;
+        console.log("コードデータ読み込み成功！", chordData);
+      });
+  </script>
+</body>
+</html>

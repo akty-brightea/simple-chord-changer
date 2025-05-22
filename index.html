@@ -5,6 +5,18 @@
   <title>シンプルギターコードチェンジャー</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="style.css">
+  
+  <!-- iOS対応 -->
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="コードチェンジャー">
+
+  <!-- manifest の読み込み -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- PWA用テーマカラー（スマホのアドレスバー色など） -->
+  <meta name="theme-color" content="#deb887">
 </head>
 <body>
   <div class="container">
@@ -28,16 +40,6 @@
         console.log("コードデータ読み込み成功！", chordData);
       });
   </script>
-
-  <!-- manifest の読み込み -->
-  <link rel="manifest" href="manifest.json">
-
-  <!-- PWA用テーマカラー（スマホのアドレスバー色など） -->
-  <meta name="theme-color" content="#4caf50">
-
-  <!-- iOS対応 -->
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <!-- service worker 登録 -->
   <script>
